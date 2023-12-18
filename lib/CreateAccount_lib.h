@@ -13,6 +13,7 @@ typedef struct account {
 	char username[64];
 	char password[64];
 	char accountType;
+	int userAge;
 	double amount;
 	Account* nextAccount;
 } Account;
