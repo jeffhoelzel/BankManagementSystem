@@ -15,7 +15,7 @@ typedef struct account {
 	char accountType;
 	int userAge;
 	double amount;
-	Account* nextAccount;
+	struct Account* nextAccount;
 } Account;
 typedef enum accountType {
 	CHECKING = 'C',
