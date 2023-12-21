@@ -7,23 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
-
-// data types
-typedef struct account {
-	char username[64];
-	char password[64];
-	char accountType;
-	int userAge;
-	double amount;
-	struct Account* nextAccount;
-} Account;
-typedef enum accountType {
-	CHECKING = 'C',
-	SAVINGS = 'S',
-	BROKERAGE = 'B',
-	RETIREMENT = 'R',
-	LINE_CREDIT = 'L'
-} AccountType;
+#include "dtypes.h"
 
 // function prototypes
 /**
@@ -63,4 +47,4 @@ Account createNewAccount(char accountType);
 void deleteAccount();
 
 // close guards
-#endif
+#endif // CREATEACCOUNT_LIB

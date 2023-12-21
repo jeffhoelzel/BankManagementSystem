@@ -6,6 +6,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include "dtypes.h"
 
 // function prototypes
 /**
@@ -74,4 +75,4 @@ void viewBalance(Account* userAccount);
 void interact(int choice);
 
 // close guards
-#endif
+#endif // ACCOUNTINTERACTION_LIB

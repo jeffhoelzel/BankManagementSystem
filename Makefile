@@ -27,4 +27,4 @@ Login_lib.o: Login_lib.c
 # clean directory
 clean:
 	echo "Cleaning directory of object and executeable files"
-	rm BankManagement.o CreateAccount_lib.o AccountInteraction_lib.o Login_lib.o main.exe
+	rm *.o main.exe

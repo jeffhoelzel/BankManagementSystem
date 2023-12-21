@@ -5,6 +5,7 @@
 // header files
 #include <stdio.h>
 #include <string.h>
+#include "dtypes.h"
 
 // function prototypes
 /**
@@ -40,4 +41,4 @@ char* getPassword();
 Account* authenticateAccount(Account* accountList, char* username, char* password);
 
 // close guards
-#endif
+#endif // LOGIN_LIB
