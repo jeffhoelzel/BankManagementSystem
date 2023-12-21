@@ -74,5 +74,16 @@ void viewBalance(Account* userAccount);
  */
 void interact(int choice);
 
+/**
+ * @brief Deletes an account after being provided with a username and 
+ * 		  password. 
+ * 
+ * *INSERT LONGER DESCRIPTION*
+ * 
+ * @param void
+ * @return void
+ */
+void deleteAccount();
+
 // close guards
 #endif // ACCOUNTINTERACTION_LIB

@@ -11,6 +11,7 @@ typedef struct account {
 	double amount;
 	struct Account* nextAccount;
 } Account;
+
 typedef enum accountType {
 	CHECKING = 'C',
 	SAVINGS = 'S',

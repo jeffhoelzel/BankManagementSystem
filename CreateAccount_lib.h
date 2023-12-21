@@ -35,16 +35,5 @@ char getUserAccountChoice();
  */
 Account createNewAccount(char accountType);
 
-/**
- * @brief Deletes an account after being provided with a username and 
- * 		  password. 
- * 
- * *INSERT LONGER DESCRIPTION*
- * 
- * @param void
- * @return void
- */
-void deleteAccount();
-
 // close guards
 #endif // CREATEACCOUNT_LIB
