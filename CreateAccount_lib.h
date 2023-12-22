@@ -11,10 +11,26 @@
 
 // function prototypes
 /**
+ * @brief Prompts the to enter a choice, 'Y' or 'N'. 
+ * 
+ * Prompt the user to enter either 'Y' for yes, or 'N' for no. If the user 
+ * pressed ENTER ask them to confirm they pressed ENTER and end the program 
+ * if so. Otherwise, allow them to try again in the event of a misspress.
+ * 
+ * @param void
+ * @return userChoice: a character either 'Y' or 'N'
+ */
+char getUserChoice();
+/**
  * @brief Prompts the user with menu of choices from which to choose an 
  * 		  account to create from.
  * 
- * *INSERT LONGER DESCRIPTION*
+ * Prompt the user to enter a choice of account types using the enum AccountTypes
+ * located in the dtypes.h libarary. Check to make sure user entered a valid 
+ * charcter, if they pressed ENTER, ask them to press ENTER again to ensure 
+ * they want to end the program. If they pressed a character that is not valid 
+ * (i.e. not on the list), allow the user to try again. When the user enters a 
+ * valid character, save and return that character to be used in other functions.
  * 
  * @param void
  * @return userChoice: a character representing the type of account the 
@@ -26,7 +42,13 @@ char getUserAccountChoice();
  * @brief Creates a bank account for the user where certain accounts can 
  * 		  perform certain actions.
  * 
- * *INSERT LONGER DESCRIPTION*
+ * Using the Account struct from the dtypes.h libarary, create a new account. 
+ * Prompt the user to enter a username and password for this online bank account,
+ * and make sure they confirm this password by typing it in again; if the passwords 
+ * do not match, have them re-enter their password from start to finish. Prompt the
+ * user to enter their age (must be above 13), and an amount of money they wish to
+ * load onto the account (must be positive and less than $10,000.00). Have the struct
+ * field nextAccount point to the next available account in the linked list.
  * 
  * @param accountType: a character in the form of the enum AccountType 
  * 		  that specifies the type of account the user wants to create.

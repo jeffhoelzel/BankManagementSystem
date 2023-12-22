@@ -12,13 +12,13 @@ typedef struct account {
 	struct Account* nextAccount;
 } Account;
 
-typedef enum accountType {
+typedef enum accountTypes {
 	CHECKING = 'C',
 	SAVINGS = 'S',
 	BROKERAGE = 'B',
 	RETIREMENT = 'R',
 	LINE_CREDIT = 'L'
-} AccountType;
+} AccountTypes;
 
 // close guards
 #endif // DTYPES
