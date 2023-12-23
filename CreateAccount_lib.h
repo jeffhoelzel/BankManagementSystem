@@ -46,7 +46,7 @@ char getUserAccountChoice();
  * Prompt the user to enter a username and password for this online bank account,
  * and make sure they confirm this password by typing it in again; if the passwords 
  * do not match, have them re-enter their password from start to finish. Prompt the
- * user to enter their age (must be above 13), and an amount of money they wish to
+ * user to enter their age (must be between 13 and 120), and an amount of money they wish to
  * load onto the account (must be positive and less than $10,000.00). Have the struct
  * field nextAccount point to the next available account in the linked list.
  * 
@@ -55,7 +55,7 @@ char getUserAccountChoice();
  * @return newAccount: a pointer to the Account struct created by this 
  * 		   function.
  */
-Account createNewAccount(char accountType);
+Account* createNewAccount(char accountType);
 
 // close guards
 #endif // CREATEACCOUNT_LIB
