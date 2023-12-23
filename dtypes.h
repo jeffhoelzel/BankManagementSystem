@@ -2,6 +2,9 @@
 #ifndef DTYPES
 #define DTYPES
 
+// global constants
+#define ABORT_CHAR 'Q'
+
 // data types
 typedef struct account {
 	char username[64];
