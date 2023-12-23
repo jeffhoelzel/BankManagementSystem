@@ -2,6 +2,28 @@
 #include "CreateAccount_lib.h"
 
 // function implementations
+bool checkIfEnter(char* userInput)
+{
+	// check if first index of string is '\n'
+		// if true:
+			// prompt the user to see if they are sure they want to quit
+				// read in user response
+					// function: fgets
+				// convert user input to uppercase
+					// function: toupper
+				// if response is 'Y', return true
+			// loop while response is invalid (i.e. not 'Y' or 'N')
+				// notify user of error and prompt them to try again
+					// function: printf
+				// read in user input
+					// function: fgets
+				// convert user input to uppercase
+					// function: toupper
+				// check if response is 'Y'
+					// if true, return true
+
+	// return false by default (flow control falls through)
+}
 char getUserChoice()
 {
 	// declare/initialize variables
@@ -14,13 +36,7 @@ char getUserChoice()
 		// function: fgets
 
 	// check if user pressed ENTER
-		// if true: 
-			// prompt user to confirm they are sure by pressing
-			//     ENTER again
-			// check if user entered 'Y'
-				// if true: return end of program character
-				// otherwise, prompt user to try again
-		// otherwise, continue rest of function
+		// function: checkIfEnter
 
 	// convert user input to uppercase
 		// function: toupper
@@ -36,13 +52,7 @@ char getUserChoice()
 			// function: fgets
 
 		// check if user pressed ENTER
-		// if true: 
-			// prompt user to confirm they are sure by pressing
-			//     ENTER again
-			// check if user entered 'Y'
-				// if true: return end of program character
-				// otherwise, prompt user to try again
-		// otherwise, continue rest of function
+			// function: checkIfEnter
 
 		// convert user input to uppercase
 			// function: toupper
@@ -66,13 +76,7 @@ char getUserAccountChoice()
 		// function: fgets
 
 	// check if user pressed ENTER
-		// if true: 
-			// prompt user to confirm they are sure by pressing
-			//     ENTER again
-			// check if user entered 'Y'
-				// if true: return end of program character
-				// otherwise, prompt user to try again
-		// otherwise, continue rest of function
+		// function: checkIfEnter
 
 	// convert user input to uppercase
 		// function: toupper
@@ -91,13 +95,7 @@ char getUserAccountChoice()
 			// function: fgets
 
 		// check if user pressed ENTER
-		// if true: 
-			// prompt user to confirm they are sure by pressing
-			//     ENTER again
-			// check if user entered 'Y'
-				// if true: return end of program character
-				// otherwise, prompt user to try again
-		// otherwise, continue rest of function
+			// function: checkIfEnter
 
 		// convert user input to uppercase
 			// function: toupper
@@ -110,20 +108,23 @@ Account* createNewAccount(char accountType)
 {
 	// declare/initialize variables
 
-	// prompt the user to enter a username and password for their new account
+	// prompt the user to enter a username
 		// function: printf
 
 	// read in user input
 		// function: fgets
 
 	// check if user pressed ENTER
-	// if true: 
-		// prompt user to confirm they are sure by pressing
-		//     ENTER again
-		// check if user entered 'Y'
-			// if true: return end of program character
-			// otherwise, prompt user to try again
-	// otherwise, continue rest of function
+		// function: checkIfEnter
+
+	// prompt the user to enter a password
+		// function: printf
+
+	// read in user input
+		// function: fgets
+
+	// check if user pressed ENTER
+		// function: checkIfEnter
 
 	// prompt the user to confirm their password
 		// function: printf
@@ -132,13 +133,7 @@ Account* createNewAccount(char accountType)
 		// function: fgets
 
 	// check if user pressed ENTER
-	// if true: 
-		// prompt user to confirm they are sure by pressing
-		//     ENTER again
-		// check if user entered 'Y'
-			// if true: return end of program character
-			// otherwise, prompt user to try again
-	// otherwise, continue rest of function
+		// function: checkIfEnter
 
 	// loop while passwords do not match
 		// function: strcmp
@@ -149,13 +144,7 @@ Account* createNewAccount(char accountType)
 			// function: fgets
 
 		// check if user pressed ENTER
-			// if true: 
-				// prompt user to confirm they are sure by pressing
-				//     ENTER again
-				// check if user entered 'Y'
-					// if true: return end of program character
-					// otherwise, prompt user to try again
-			// otherwise, continue rest of function
+			// function: checkIfEnter
 
 		// prompt the user to confirm their password
 			// function: printf
@@ -164,13 +153,7 @@ Account* createNewAccount(char accountType)
 			// function: fgets
 
 		// check if user pressed ENTER
-			// if true: 
-				// prompt user to confirm they are sure by pressing
-				//     ENTER again
-				// check if user entered 'Y'
-					// if true: return end of program character
-					// otherwise, prompt user to try again
-			// otherwise, continue rest of function
+			// function: checkIfEnter
 
 	// end loop
 
@@ -181,13 +164,7 @@ Account* createNewAccount(char accountType)
 		// function: fgets
 
 	// check if user pressed ENTER
-		// if true: 
-			// prompt user to confirm they are sure by pressing
-			//     ENTER again
-			// check if user entered 'Y'
-				// if true: return end of program character
-				// otherwise, prompt user to try again
-		// otherwise, continue rest of function
+		// function: checkIfEnter
 
 	// convert from string to int
 		// function: atoi
@@ -200,13 +177,7 @@ Account* createNewAccount(char accountType)
 			// function: fgets
 
 		// check if user pressed ENTER
-			// if true: 
-				// prompt user to confirm they are sure by pressing
-				//     ENTER again
-				// check if user entered 'Y'
-					// if true: return end of program character
-					// otherwise, prompt user to try again
-			// otherwise, continue rest of function
+			// function: checkIfEnter
 
 		// convert from string to int
 			// function: atoi
@@ -220,13 +191,7 @@ Account* createNewAccount(char accountType)
 		// function: fgets
 
 	// check if user pressed ENTER
-		// if true: 
-			// prompt user to confirm they are sure by pressing
-			//     ENTER again
-			// check if user entered 'Y'
-				// if true: return end of program character
-				// otherwise, prompt user to try again
-		// otherwise, continue rest of function
+		// function: checkIfEnter
 
 	// convert from string to double
 		// function: atof
@@ -239,13 +204,7 @@ Account* createNewAccount(char accountType)
 			// function: fgets
 
 		// check if user pressed ENTER
-			// if true: 
-				// prompt user to confirm they are sure by pressing
-				//     ENTER again
-				// check if user entered 'Y'
-					// if true: return end of program character
-					// otherwise, prompt user to try again
-			// otherwise, continue rest of function
+			// function: checkIfEnter
 
 		// convert from string to double
 			// function: atof
