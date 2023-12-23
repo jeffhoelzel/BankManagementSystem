@@ -15,9 +15,7 @@ typedef struct account {
 typedef enum accountTypes {
 	CHECKING = 'C',
 	SAVINGS = 'S',
-	BROKERAGE = 'B',
-	RETIREMENT = 'R',
-	LINE_CREDIT = 'L'
+	RETIREMENT = 'R'
 } AccountTypes;
 
 // close guards
