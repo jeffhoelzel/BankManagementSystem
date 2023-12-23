@@ -28,11 +28,14 @@ bool checkIfEnter(char* userInput)
 		confirmation = toupper(confirmation);
 
 				// if response is 'Y', return true
-				// otherwise, return false if response is 'N'
+				// otherwise, return false if response is 'N', and notify user
 		if (confirmation == 'Y')
 			return true;
 		else if (confirmation == 'N')
+		{
+			printf("Termination canceled.\n");
 			return false;
+		}
 
 			// loop while response is invalid (i.e. not 'Y' or 'N')
 		while (confirmation != 'Y' && confirmation != 'N')
@@ -55,11 +58,14 @@ bool checkIfEnter(char* userInput)
 
 				// check if response is 'Y'
 					// if true, return true
-					// otherwise, return false if response is 'N'
+					// otherwise, return false if response is 'N', and notify user
 			if (confirmation == 'Y')
 				return true;
 			else if (confirmation == 'N')
+			{
+				printf("Termination canceled.\n");
 				return false;
+			}
 		}
 	}
 
@@ -127,49 +133,73 @@ char getUserChoice()
 	// return the user's choice
 	return userInput;
 }
-// char getUserAccountChoice()
-// {
+char getUserAccountChoice()
+{
 	// declare/initialize variables
+	char userAccountStr[3];
+	char userAccount;
 
-	// print a menu displaying the types of accounts a user can create
+	// print a menu displaying the types of accounts a user can create and prompt
+	//     the user to choose an account from the list
 		// function: printf
-
-	// prompt user to enter a character that corresponds to the account
-	//     they wish to open
-		// function: printf
+	printf("Choose one of the following accounts by typing in the corresponding character:\n");
+	printf("==============================================================================\n");
+	printf("Checking (C)\nSavings (S)\nRetirement (R)\n");
 
 	// read in user input
 		// function: fgets
+	fgets(userAccountStr, sizeof(userAccountStr), stdin);
 
 	// check if user pressed ENTER
 		// function: checkIfEnter
+		// if true, return abort character
+	if (checkIfEnter(userAccountStr))
+		return ABORT_CHAR;
+
+	// get first char in string
+	userAccount = userAccountStr[0];
 
 	// convert user input to uppercase
 		// function: toupper
+	userAccount = toupper(userAccount);
 
 	// loop while user has not entered valid characters
+	while (userAccount != 'C' && userAccount != 'S' && userAccount != 'R')
+	{
 		// print out error message telling user they entered invalid input
 			// function: printf
+		printf("Error: Response must be chosen from the list above.\n");
 
 		// print a new menu for the user to choose from
 			// function: printf
+		printf("Checking (C)\nSavings (S)\nRetirement (R)\n");
 
 		// prompt user to try again
 			// function: printf
+		printf("Please try again: ");
 
 		// read in user input
 			// function: fgets
+		fgets(userAccountStr, sizeof(userAccountStr), stdin);
 
 		// check if user pressed ENTER
 			// function: checkIfEnter
+			// if true, return abort character
+		if (checkIfEnter(userAccountStr))
+			return ABORT_CHAR;
+
+		// get first char in string
+		userAccount = userAccountStr[0];
 
 		// convert user input to uppercase
 			// function: toupper
-
+		userAccount = toupper(userAccount);
+	}
 	// end loop
 
 	// return the user's choice
-// }
+	return userAccount;
+}
 // Account* createNewAccount(char accountType)
 // {
 	// declare/initialize variables
