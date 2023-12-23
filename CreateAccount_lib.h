@@ -7,9 +7,19 @@
 #include <stdlib.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdbool.h>
 #include "dtypes.h"
 
 // function prototypes
+/**
+ * @brief Check if the user pressed ENTER key.
+ * 
+ * Check if the user pressed the ENTER key by comparing string to newline character.
+ * 
+ * @param userInput: the user's input which may or may not be a newline character.
+ * @return true if the string is a newline character and false otherwise.
+ */
+bool checkIfEnter(char* userInput);
 /**
  * @brief Prompts the to enter a choice, 'Y' or 'N'. 
  * 
