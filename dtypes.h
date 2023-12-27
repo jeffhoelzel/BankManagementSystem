@@ -3,7 +3,10 @@
 #define DTYPES
 
 // global constants
-#define ABORT_CHAR 'Q'
+#define ABORT_CHAR 'Q' // for function terminations returning chars
+#define ENTER '\n' // if user presses ENTER key
+#define TAB '\t' // if user presses TAB key
+#define BACKSPACE '\b' // if user presses BACKSPACE key
 
 // data types
 typedef struct account {
