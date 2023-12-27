@@ -7,12 +7,12 @@
 
 // data types
 typedef struct account {
+	struct account* nextAccount;
 	char username[64];
 	char password[64];
 	char accountType;
 	int userAge;
 	double amount;
-	struct Account* nextAccount;
 } Account;
 
 typedef enum accountTypes {

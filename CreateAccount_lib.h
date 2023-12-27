@@ -10,6 +10,9 @@
 #include <stdbool.h>
 #include "dtypes.h"
 
+// head of accounts linked list
+extern Account* headAccount;
+
 // function prototypes
 /**
  * @brief Check if the user pressed ENTER key.
