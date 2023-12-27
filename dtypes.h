@@ -10,8 +10,8 @@ typedef struct account {
 	struct account* nextAccount;
 	char username[64];
 	char password[64];
-	char accountType;
-	int userAge;
+	char type;
+	int age;
 	double amount;
 } Account;
 
