@@ -207,11 +207,12 @@ Account* createNewAccount(char accountType)
 {
 	// declare/initialize variables
 	Account* newAccount = NULL;
-	char userAgeStr[8];
+	char userAgeStr[6];
 	int userAge;
 	char userCashAmountStr[16];
 	double userCashAmount;
 	char confirmPassword[64];
+	bool flag = false;
 
 	// check if linked list is empty
 	if (headAccount == NULL)
@@ -260,8 +261,31 @@ Account* createNewAccount(char accountType)
 	// check if user pressed ENTER
 		// function: checkIfEnter
 		// if true, return null
-	if (checkIfEnter(newAccount->username))
+	flag = checkIfEnter(newAccount->username);
+	if (flag)
 		return NULL;
+
+	// loop while user has decided not to quit
+	while (!flag)
+	{
+		// prompt user to enter a username
+			// function: printf
+		printf("Enter a username (64 characters max): ");
+
+		// read in user input
+			// function: fgets
+		fgets(newAccount->username, sizeof(newAccount->username), stdin);
+
+		// check if user pressed ENTER
+			// function: checkIfEnter
+			// if true, retrun 
+			// otherwise, break out of loop
+		if (strcmp(newAccount->username, "\n") == 0)
+			return NULL;
+		else
+			break;
+	}
+	// end loop
 
 	// prompt the user to enter a password
 		// function: printf
@@ -377,7 +401,7 @@ Account* createNewAccount(char accountType)
 	}
 	// end loop
 
-// prompt user to enter cash value
+	// prompt user to enter cash value
 		// function: printf
 	printf("Enter your cash (between $0 and $10,000.00): ");
 
@@ -423,8 +447,8 @@ Account* createNewAccount(char accountType)
 	// end loop
 
 	// assign account type, age, money to new account fields
-	newAccount->accountType = accountType; 
-	newAccount->userAge = userAge;
+	newAccount->type = accountType; 
+	newAccount->age = userAge;
 	newAccount->amount = userCashAmount;
 
 	// return the new account
