@@ -12,8 +12,8 @@
  * @brief Prompt the user for their username and store.
  * 
  * Prompt the user for their username, and store in variable username to 
- * return to caller. If the user presses ENTER with nothing typed, warn user
- * and prompt to try again or press 'Q' for quit.
+ * return to caller. If user presses enter without anything typed, the function
+ * will return.
  * 
  * @param void
  * @return username: the user's username as a string.
@@ -24,9 +24,9 @@ char* getUsername();
  * @brief Prompt the user for their password and store.
  * 
  * Prompt the user for their password, and store in variable password to
- * return to caller. If the user pressed ENTER with nothing typed, warn user
- * and prompt to try again or press 'Q' for quit. Password will be hidden, 
- * characters are to be replaced with asterisks.
+ * return to caller. If user presses enter without anything typed, the function
+ * will return. Password will be hidden, characters are to be replaced with 
+ * asterisks.
  * 
  * @param void
  * @return password: the user's password as a string.
