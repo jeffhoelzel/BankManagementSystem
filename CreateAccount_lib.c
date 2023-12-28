@@ -207,7 +207,7 @@ Account* createNewAccount(char accountType)
 		fgets(newAccount->username, sizeof(newAccount->username), stdin);
 
 		// check if user pressed ENTER
-			// function: checkIfEnter
+			// function: strcmp
 			// if true, retrun 
 			// otherwise, break out of loop
 		if (strcmp(newAccount->username, "\n") == 0)
