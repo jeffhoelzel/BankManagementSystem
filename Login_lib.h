@@ -11,7 +11,9 @@
 /**
  * @brief Prompt the user for their username and store.
  * 
- * *INSERT LONGER DESCRIPTION*
+ * Prompt the user for their username, and store in variable username to 
+ * return to caller. If the user presses ENTER with nothing typed, warn user
+ * and prompt to try again or press 'Q' for quit.
  * 
  * @param void
  * @return username: the user's username as a string.
@@ -21,7 +23,10 @@ char* getUsername();
 /**
  * @brief Prompt the user for their password and store.
  * 
- * *INSERT LONGER DESCRIPTION*
+ * Prompt the user for their password, and store in variable password to
+ * return to caller. If the user pressed ENTER with nothing typed, warn user
+ * and prompt to try again or press 'Q' for quit. Password will be hidden, 
+ * characters are to be replaced with asterisks.
  * 
  * @param void
  * @return password: the user's password as a string.
@@ -31,7 +36,10 @@ char* getPassword();
 /**
  * @brief Log the user into their account based upon their username and password.
  * 
- * *INSERT LONGER DESCRIPTION*
+ * Given the account list (as a linked list), the username, and the password 
+ * of an account, this function will log the user in by having the current user 
+ * be pointed to by the return value. From there, the user is free to do whatever
+ * they please with their account, provided their information is correct.
  * 
  * @param accountList: a linked list of bank accounts as a pointer to the Account struct.
  * 		  username: the user's username as a string.
