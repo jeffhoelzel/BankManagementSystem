@@ -24,9 +24,8 @@ char* getUsername();
  * @brief Prompt the user for their password and store.
  * 
  * Prompt the user for their password, and store in variable password to
- * return to caller. If user presses enter without anything typed, the function
- * will return. Password will be hidden, characters are to be replaced with 
- * asterisks.
+ * return to caller. This function will not allow the user to quit the program. 
+ * Password will be hidden, characters are to be replaced with asterisks.
  * 
  * @param void
  * @return password: the user's password as a string.

@@ -60,3 +60,20 @@ char* getPassword()
 
 	// return password
 }
+Account* authenticateAccount(Account* accountList, char* username, char* password)
+{
+	// initialize/declare variables
+
+	// loop while the current account pointer is not null
+		// assign the head pointer to next pointer field in head
+
+		// check if current account pointer's username is equal to username param
+			// function: strcmp
+			// if true, check if current account pointer's password is equal to password param
+				// function: strcmp
+				// if true, return the current account pointer
+
+	// end loop
+
+	// return null by default (function fell through)
+}
