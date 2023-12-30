@@ -15,6 +15,10 @@ void getUsername(char username[64])
 		// function: fgets
 	fgets(username, (MAX_SIZE * sizeof(char)), stdin);
 
+	// remove trailing new line character
+		// function: strcspn
+	username[strcspn(username, "\n")] = '\0';
+
 	// check if user pressed ENTER and assign result to username flag
 		// function: checkIfEnter
 		// if true, assign return string "N/A" to username
@@ -26,8 +30,8 @@ void getUsername(char username[64])
 		return;
 	}
 
-	// loop while user has decided not to quit
-	while (!flag)
+	// loop while user has decided not to quit and username has newline in first index
+	while (!flag && username[0] == '\n')
 	{
 		// prompt user to enter their username
 			// function: printf
@@ -36,6 +40,10 @@ void getUsername(char username[64])
 		// read in user input
 			// function: fgets
 		fgets(username, (MAX_SIZE * sizeof(char)), stdin);
+
+		// remove trailing new line character
+			// function: strcspn
+		username[strcspn(username, "\n")] = '\0';
 
 		// check if user pressed ENTER without prompt
 			// function: strcmp
@@ -103,20 +111,33 @@ void getPassword(char password[64])
 		// function: printf
 	printf("\n");
 }
-// Account* authenticateAccount(Account* accountList, char* username, char* password)
-// {
+Account* authenticateAccount(Account* accountList, char* username, char* password)
+{
 	// initialize/declare variables
+	Account* currentAccount = accountList;
 
 	// loop while the current account pointer is not null
+	while (currentAccount != NULL)
+	{
 		// assign the head pointer to next pointer field in head
+		accountList = accountList->nextAccount;
 
 		// check if current account pointer's username is equal to username param
 			// function: strcmp
+		if (strcmp(currentAccount->username, username) == 0)
+		{
 			// if true, check if current account pointer's password is equal to password param
 				// function: strcmp
 				// if true, return the current account pointer
+			if (strcmp(currentAccount->password, password) == 0)
+				return currentAccount;
+		}
 
+		// assign current account to account list
+		currentAccount = accountList;
+	}
 	// end loop
 
 	// return null by default (function fell through)
-// }
+	return NULL;
+}
