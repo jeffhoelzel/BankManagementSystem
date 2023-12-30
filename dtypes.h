@@ -14,6 +14,7 @@
 #define ENTER '\n' // if user presses ENTER key
 #define TAB '\t' // if user presses TAB key
 #define BACKSPACE '\b' // if user presses BACKSPACE key
+#define MAX_SIZE 64 // max size of username and password buffers
 
 // data types
 typedef struct account {

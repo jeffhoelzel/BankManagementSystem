@@ -1,5 +1,5 @@
 // header files
-#include "dtypes.c"
+#include "dtypes.h"
 
 // function implementations
 bool checkIfEnter(char* userInput)
