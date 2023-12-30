@@ -3,34 +3,32 @@
 #define LOGIN_LIB
 
 // header files
-#include <stdio.h>
-#include <string.h>
 #include "dtypes.h"
 
 // function prototypes
 /**
  * @brief Prompt the user for their username and store.
  * 
- * Prompt the user for their username, and store in variable username to 
+ * Prompt the user for their username, and store into param username to 
  * return to caller. If user presses enter without anything typed, the function
  * will return.
  * 
- * @param void
- * @return username: the user's username as a string.
+ * @param username: the username that is the output param.
+ * @return void
  */
-char* getUsername();
+void getUsername(char username[64]);
 
 /**
  * @brief Prompt the user for their password and store.
  * 
- * Prompt the user for their password, and store in variable password to
+ * Prompt the user for their password, and store into param password to
  * return to caller. This function will not allow the user to quit the program. 
  * Password will be hidden, characters are to be replaced with asterisks.
  * 
- * @param void
- * @return password: the user's password as a string.
+ * @param password: the password that is the output param.
+ * @return void
  */
-char* getPassword();
+void getPassword(char password[64]);
 
 /**
  * @brief Log the user into their account based upon their username and password.

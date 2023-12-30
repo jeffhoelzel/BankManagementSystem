@@ -3,9 +3,6 @@
 #define ACCOUNTINTERACTION_LIB
 
 // header files
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
 #include "dtypes.h"
 
 // function prototypes

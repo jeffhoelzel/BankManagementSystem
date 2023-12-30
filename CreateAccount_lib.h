@@ -3,11 +3,6 @@
 #define CREATEACCOUNT_LIB
 
 // header files
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <ctype.h>
-#include <stdbool.h>
 #include "dtypes.h"
 
 // head of accounts linked list
