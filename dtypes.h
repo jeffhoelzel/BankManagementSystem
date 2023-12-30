@@ -8,12 +8,13 @@
 #include <stdbool.h>
 #include <string.h>
 #include <ctype.h>
+#include <conio.h>
 
 // global constants
 #define ABORT_CHAR 'Q' // for function terminations returning chars
-#define ENTER '\n' // if user presses ENTER key
-#define TAB '\t' // if user presses TAB key
-#define BACKSPACE '\b' // if user presses BACKSPACE key
+#define ENTER 13 // if user presses ENTER key (ASCII value)
+#define TAB 9 // if user presses TAB key (ASCII value)
+#define BACKSPACE 8 // if user presses BACKSPACE key (ASCII value)
 #define MAX_SIZE 64 // max size of username and password buffers
 
 // data types
