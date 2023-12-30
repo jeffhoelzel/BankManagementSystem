@@ -52,34 +52,57 @@ void getUsername(char username[64])
 	}
 	// end loop 
 }
-// void getPassword(char password[64])
-// {
+void getPassword(char password[64])
+{
 	// initialize/declare variables
+	char ch;
+	int idx = 0;
 
 	// prompt user to enter their password
 		// function: printf
+	printf("Enter your password: ");
 
-	// loop while user is typing their password
-		// get current character from the standard input stream
-			// function: getc
+	// loop while user is typing their password (until break is reached)
+	while (true)
+	{
+		// get current character from the standard input stream (hide user typing)
+			// function: getch
+		ch = getch();
 
 		// check if current character is ENTER or TAB
+		if (ch == ENTER || ch == TAB)
+		{
 			// if true, assign password at index to null terminator and break
 			//     out of the loop
-
-		// or if current character is a BACKSPACE
+			password[idx] = '\0';
+			break;
+		}
+		else if (ch == BACKSPACE) // or if current character is a BACKSPACE
+		{
 			// if true, check if index > 0
+			if (idx > 0)
+			{
 				// if true, decrement i and print backspace (to delete asterisk(s))
 					// function: printf
-
-		// otherwise, assign password at index i++ to current character, and print
-		//     an asterisk
-			// function: printf
-
+				idx--;
+				printf("\b \b");
+			}
+		}
+		else // otherwise: 
+		{
+			// assign password at index i++ to current character, and print an asterisk
+				// function: printf
+			password[idx++] = ch;
+			printf("* \b");
+		}
+		
+	}
 	// end loop
 
-	// return password
-// }
+	// print new line
+		// function: printf
+	printf("\n");
+}
 // Account* authenticateAccount(Account* accountList, char* username, char* password)
 // {
 	// initialize/declare variables
