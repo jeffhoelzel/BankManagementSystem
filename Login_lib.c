@@ -1,39 +1,59 @@
 // header files
-#include "Login_lib.c"
+#include "Login_lib.h"
 
 // function implementations
-char* getUsername()
+void getUsername(char username[64])
 {
 	// declare/initialize variables
+	bool flag;
 
 	// prompt user to enter their username
 		// function: printf
+	printf("Enter your username: ");
 
 	// read in user input
 		// function: fgets
+	fgets(username, (MAX_SIZE * sizeof(char)), stdin);
 
 	// check if user pressed ENTER and assign result to username flag
 		// function: checkIfEnter
-		// if true, assign return string to username and password
+		// if true, assign return string "N/A" to username
+			// function: strcpy
+	flag = checkIfEnter(username);
+	if (flag)
+	{
+		strcpy(username, "N/A");
+		return;
+	}
 
 	// loop while user has decided not to quit
+	while (!flag)
+	{
 		// prompt user to enter their username
 			// function: printf
+		printf("Enter your username: ");
 
 		// read in user input
 			// function: fgets
+		fgets(username, (MAX_SIZE * sizeof(char)), stdin);
 
 		// check if user pressed ENTER without prompt
 			// function: strcmp
-			// if true, assign return string to username and password
+			// if true, assign return string "N/A" to username
+				// function: strcpy
 			// othwerwise, break out of loop
-
+		if (strcmp(username, "\n") == 0)
+		{
+			strcpy(username, "N/A");
+			return;
+		}
+		else
+			break;
+	}
 	// end loop 
-
-	// return username
 }
-char* getPassword()
-{
+// void getPassword(char password[64])
+// {
 	// initialize/declare variables
 
 	// prompt user to enter their password
@@ -59,9 +79,9 @@ char* getPassword()
 	// end loop
 
 	// return password
-}
-Account* authenticateAccount(Account* accountList, char* username, char* password)
-{
+// }
+// Account* authenticateAccount(Account* accountList, char* username, char* password)
+// {
 	// initialize/declare variables
 
 	// loop while the current account pointer is not null
@@ -76,4 +96,4 @@ Account* authenticateAccount(Account* accountList, char* username, char* passwor
 	// end loop
 
 	// return null by default (function fell through)
-}
+// }
