@@ -52,10 +52,10 @@ void viewBalance(Account* userAccount);
  * and password they provided is correct. Correctly restructure the linked list
  * if neccessary and notify user if account deletion is successful.
  * 
- * @param void
- * @return void
+ * @param headAccount: a pointer to the head of the account's list.
+ * @return true if function found and deleted the account and false otherwise.
  */
-void deleteAccount();
+bool deleteAccount(Account* headAccount);
 
 /**
  * @brief Print a menu displaying all of the options the user has choose from 
