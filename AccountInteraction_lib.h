@@ -10,14 +10,15 @@
  * @brief Allow the user to tranfer money from their current account to another 
  * 		  account given that account's username.
  * 
- * Given a pointer to the user's account, prompt them for a username and dollar amount to 
- * transfer money from their current account to this other account, and then print a receipt 
- * for their transaction.
+ * Given a pointer to the user's account and the head of the account's list, prompt them for 
+ * a username and dollar amount to transfer money from their current account to this other 
+ * account, and then print a receipt for their transaction.
  * 
  * @param userAccount: a pointer to the user's account. 
+ * 		  headAccount: a pointer to the head of the account's list.
  * @return void
  */
-void transferMoney(Account* userAccount);
+void transferMoney(Account* userAccount, Account* headAccount);
 
 /**
  * @brief Allow the user to make a purchase.
