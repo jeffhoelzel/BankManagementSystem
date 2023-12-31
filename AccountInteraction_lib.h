@@ -84,15 +84,15 @@ bool deleteAccount(Account* headAccount);
  * @brief Print a menu displaying all of the options the user has choose from 
  * 		  regarding interacting with their specific account.
  * 
- * Given the account type as a character and a pointer to the user's account, print a list 
+ * Given the account type as a character from a pointer to the user's account, print a list 
  * specific to that type of account and allow the user to pick from it. Return an integer 
  * value representing which option the user decided to choose.
  * 
  * @param accountType: a character representing the type of account the user owns.
  * 		  userAccount: a pointer to the user's account.
- * @return choice: the user's choice picked from the menu
+ * @return choice: the user's choice picked from the menu as a character.
  */
-int getUserActionChoice(char accountType, Account* userAccount);
+char getUserActionChoice(Account* userAccount);
 
 /**
  * @brief User can choose what to do with their account based upon return value
@@ -101,11 +101,10 @@ int getUserActionChoice(char accountType, Account* userAccount);
  * Implement the entire system for the user's choice and execution based upon the 
  * integer value of their choice and given a pointer to their logged-in account.
  * 
- * @param choice: an integer representing the user's choice from getUserActionChoice.
- * 		  userAccount: a pointer to the user's account.
+ * @param userAccount: a pointer to the user's account.
  * @return void
  */
-void interact(int choice, Account* userAccount);
+void interact(Account* userAccount);
 
 // close guards
 #endif // ACCOUNTINTERACTION_LIB
