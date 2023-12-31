@@ -7,17 +7,6 @@
 
 // function prototypes
 /**
- * @brief Print a menu displaying all of the options the user has choose from 
- * 		  regarding interacting with their specific account.
- * 
- * *INSERT LONGER DESCRIPTION*
- * 
- * @param accountType: a character representing the type of account the user owns.
- * @return choice: the user's choice picked from the menu
- */
-int getUserActionChoice(char accountType);
-
-/**
  * @brief Allow the user to tranfer money from their current account to another 
  * 		  account given that account's username.
  * 
@@ -27,16 +16,6 @@ int getUserActionChoice(char accountType);
  * @return void
  */
 void transferMoney(Account* userAccount);
-
-/**
- * @brief Allow the user to pay off any debt accrued on their account.
- * 
- * *INSERT LONGER DESCRIPTION*
- * 
- * @param userAccount: a pointer to the user's account.
- * @return void
- */
-void payDebt(Account* userAccount);
 
 /**
  * @brief Allow the user to make a purchase.
@@ -60,6 +39,28 @@ void purchaseItem(Account* userAccount, double cost);
 void viewBalance(Account* userAccount);
 
 /**
+ * @brief Deletes an account after being provided with a username and 
+ * 		  password. 
+ * 
+ * *INSERT LONGER DESCRIPTION*
+ * 
+ * @param void
+ * @return void
+ */
+void deleteAccount();
+
+/**
+ * @brief Print a menu displaying all of the options the user has choose from 
+ * 		  regarding interacting with their specific account.
+ * 
+ * *INSERT LONGER DESCRIPTION*
+ * 
+ * @param accountType: a character representing the type of account the user owns.
+ * @return choice: the user's choice picked from the menu
+ */
+int getUserActionChoice(char accountType);
+
+/**
  * @brief User can choose what to do with their account based upon return value
  * 		  from the getUserActionChoice function.
  * 
@@ -70,17 +71,6 @@ void viewBalance(Account* userAccount);
  * @return void
  */
 void interact(int choice);
-
-/**
- * @brief Deletes an account after being provided with a username and 
- * 		  password. 
- * 
- * *INSERT LONGER DESCRIPTION*
- * 
- * @param void
- * @return void
- */
-void deleteAccount();
 
 // close guards
 #endif // ACCOUNTINTERACTION_LIB
