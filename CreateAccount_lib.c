@@ -5,67 +5,6 @@
 Account* headAccount = NULL;
 
 // function implementations
-char getUserChoice()
-{
-	// declare/initialize variables
-	char userInputStr[3];
-	char userInput;
-
-	// prompt the user to enter a 'Y' for yes, an 'N' for no, and ENTER
-	//     to quit
-		// function: printf
-	printf("Yes (Y), No (N), or Cancel (ENTER): ");
-
-	// read in user input
-		// function: fgets
-	fgets(userInputStr, sizeof(userInputStr), stdin);
-
-	// check if user pressed ENTER
-		// function: checkIfEnter
-		// if true, return abort character
-	if (checkIfEnter(userInputStr))
-		return ABORT_CHAR;
-
-	// get first char in string (should be 'Y' or 'N')
-	userInput = userInputStr[0];
-
-	// convert user input to uppercase
-		// function: toupper
-	userInput = toupper(userInput);
-
-	// loop while user has not entered valid characters
-	while (userInput != 'Y' && userInput != 'N')
-	{
-		// print out error message telling user they entered invalid input
-			// function: printf
-		printf("Error: Response must be 'Y', 'N', or 'ENTER'.\n");
-
-		// prompt user to try again
-			// function: printf
-		printf("Please try again: ");
-
-		// read in user input
-			// function: fgets
-		fgets(userInputStr, sizeof(userInputStr), stdin);
-
-		// check if user pressed ENTER
-			// function: checkIfEnter
-			// if true, return abort character
-		if (checkIfEnter(userInputStr))
-			return ABORT_CHAR;
-
-		// get first char in string (should be 'Y' or 'N')
-		userInput = userInputStr[0];
-
-		// convert user input to uppercase
-			// function: toupper
-		userInput = toupper(userInput);
-	}
-	// end loop
-
-	// return the user's choice
-	return userInput;
-}
 char getUserAccountChoice()
 {
 	// declare/initialize variables

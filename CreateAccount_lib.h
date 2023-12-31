@@ -10,17 +10,6 @@ extern Account* headAccount;
 
 // function prototypes
 /**
- * @brief Prompts the to enter a choice, 'Y' or 'N'. 
- * 
- * Prompt the user to enter either 'Y' for yes, or 'N' for no. If the user 
- * pressed ENTER ask them to confirm they pressed ENTER and end the program 
- * if so. Otherwise, allow them to try again in the event of a misspress.
- * 
- * @param void
- * @return userChoice: a character either 'Y' or 'N'
- */
-char getUserChoice();
-/**
  * @brief Prompts the user with menu of choices from which to choose an 
  * 		  account to create from.
  * 
