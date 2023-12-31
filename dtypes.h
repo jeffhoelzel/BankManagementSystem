@@ -33,6 +33,13 @@ typedef enum accountTypes {
 	RETIREMENT = 'R'
 } AccountTypes;
 
+typedef enum userChoices {
+	TRANSFER,
+	PURCHASE,
+	VIEW_BAL,
+	DELETE
+} UserChoices;
+
 // global function prototypes
 /**
  * @brief Check if the user pressed ENTER key.
