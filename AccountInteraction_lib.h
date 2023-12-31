@@ -47,8 +47,8 @@ void viewBalance(Account* userAccount);
  * @brief Deletes an account after being provided with a username and 
  * 		  password. 
  * 
- * Given a pointer to the user's account, allow them to delete their account if the 
- * username and password they provided is correct. Correctly restructure the linked list
+ * Prompt the user to delete their account if the username matches one in memory
+ * and password they provided is correct. Correctly restructure the linked list
  * if neccessary and notify user if account deletion is successful.
  * 
  * @param void
