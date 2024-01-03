@@ -17,6 +17,7 @@
 #define BACKSPACE 8 // if user presses BACKSPACE key (ASCII value)
 #define MAX_SIZE 64 // max size of username and password buffers
 #define MAX_MONEY_SIZE 16 // max size of money adding, withdrawing, and transfering buffers
+#define SALES_TAX 0.086 // sales tax as a decimal for my current location
 
 // data types
 typedef struct account {
