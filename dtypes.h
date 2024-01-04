@@ -36,10 +36,12 @@ typedef enum accountTypes {
 } AccountTypes;
 
 typedef enum userChoices {
-	TRANSFER,
-	PURCHASE,
-	VIEW_BAL,
-	DELETE
+	DEPOSIT = 'D',
+	WITHDRAW = 'W',
+	TRANSFER = 'T',
+	PURCHASE = 'P',
+	VIEW_BAL = 'V',
+	REMOVE_ACC = 'R'
 } UserChoices;
 
 // global function prototypes
