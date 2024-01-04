@@ -44,6 +44,9 @@ typedef enum userChoices {
 	REMOVE_ACC = 'R'
 } UserChoices;
 
+// head of accounts linked list
+extern Account* headAccount;
+
 // global function prototypes
 /**
  * @brief Check if the user pressed ENTER key.

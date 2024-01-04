@@ -1,6 +1,9 @@
 // header files
 #include "dtypes.h"
 
+// define the head account pointer
+Account* headAccount = NULL;
+
 // function implementations
 bool checkIfEnter(char* userInput)
 {

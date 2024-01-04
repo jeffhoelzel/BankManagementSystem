@@ -1,9 +1,6 @@
 // header files
 #include "CreateAccount_lib.h"
 
-// define the head account pointer
-Account* headAccount = NULL;
-
 // function implementations
 char getUserAccountChoice()
 {

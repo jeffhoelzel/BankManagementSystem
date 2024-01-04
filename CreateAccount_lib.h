@@ -5,9 +5,6 @@
 // header files
 #include "dtypes.h"
 
-// head of accounts linked list
-extern Account* headAccount;
-
 // function prototypes
 /**
  * @brief Prompts the user with menu of choices from which to choose an 
