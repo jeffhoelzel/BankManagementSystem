@@ -86,7 +86,7 @@ Account* createNewAccount(char accountType)
 		// if true:
 			// allocate space in the heap for our new account
 				// function: malloc
-		newAccount = (Account*)malloc(sizeof(newAccount));
+		newAccount = (Account*)malloc(sizeof(Account));
 
 		// if malloc failed, return null
 		if (newAccount == NULL)
@@ -103,7 +103,7 @@ Account* createNewAccount(char accountType)
 		// otherwise:
 			// allocate space in the heap for a new account
 				// function: malloc
-		newAccount = (Account*)malloc(sizeof(newAccount));
+		newAccount = (Account*)malloc(sizeof(Account));
 
 		// if malloc failed, return null
 		if (newAccount == NULL)
@@ -122,7 +122,7 @@ Account* createNewAccount(char accountType)
 
 	// read in user input
 		// function: fgets
-	fgets(newAccount->username, sizeof(newAccount->username), stdin);
+	fgets(newAccount->username, (MAX_SIZE * sizeof(char)), stdin);
 
 	// check if user pressed ENTER
 		// function: checkIfEnter
@@ -130,6 +130,13 @@ Account* createNewAccount(char accountType)
 	flag = checkIfEnter(newAccount->username);
 	if (flag)
 		return NULL;
+
+	// remove trailing new line character
+			// function: strcspn
+	newAccount->username[strcspn(newAccount->username, "\n")] = '\0';
+
+	// set flag to true to skip loop if user decided not to quit
+	flag = true;
 
 	// loop while user has decided not to quit
 	while (!flag)
@@ -140,7 +147,7 @@ Account* createNewAccount(char accountType)
 
 		// read in user input
 			// function: fgets
-		fgets(newAccount->username, sizeof(newAccount->username), stdin);
+		fgets(newAccount->username, (MAX_SIZE * sizeof(char)), stdin);
 
 		// check if user pressed ENTER
 			// function: strcmp
@@ -149,7 +156,12 @@ Account* createNewAccount(char accountType)
 		if (strcmp(newAccount->username, "\n") == 0)
 			return NULL;
 		else
+		{
+			// remove trailing new line character
+					// function: strcspn
+			newAccount->username[strcspn(newAccount->username, "\n")] = '\0';
 			break;
+		}
 	}
 	// end loop
 
@@ -159,7 +171,7 @@ Account* createNewAccount(char accountType)
 
 	// read in user input
 		// function: fgets
-	fgets(newAccount->password, sizeof(newAccount->password), stdin);
+	fgets(newAccount->password, (MAX_SIZE * sizeof(char)), stdin);
 
 	// check if user pressed ENTER
 		// function: checkIfEnter
@@ -167,19 +179,27 @@ Account* createNewAccount(char accountType)
 	if (checkIfEnter(newAccount->password))
 		return NULL;
 
+	// remove trailing new line character
+			// function: strcspn
+	newAccount->password[strcspn(newAccount->password, "\n")] = '\0';
+
 	// prompt the user to confirm their password
 		// function: printf
 	printf("Confirm your password: ");
 
 	// read in user input
 		// function: fgets
-	fgets(confirmPassword, sizeof(confirmPassword), stdin);
+	fgets(confirmPassword, (MAX_SIZE * sizeof(char)), stdin);
 
 	// check if user pressed ENTER
 		// function: checkIfEnter
 		// if true, return null
 	if (checkIfEnter(confirmPassword))
 		return NULL;
+
+	// remove trailing new line character
+			// function: strcspn
+	confirmPassword[strcspn(confirmPassword, "\n")] = '\0';
 
 	// loop while passwords do not match
 		// function: strcmp
@@ -195,7 +215,7 @@ Account* createNewAccount(char accountType)
 
 		// read in user input
 			// function: fgets
-		fgets(newAccount->password, sizeof(newAccount->password), stdin);
+		fgets(newAccount->password, (MAX_SIZE * sizeof(char)), stdin);
 
 		// check if user pressed ENTER
 			// function: checkIfEnter
@@ -203,19 +223,27 @@ Account* createNewAccount(char accountType)
 		if (checkIfEnter(newAccount->password))
 			return NULL;
 
+		// remove trailing new line character
+				// function: strcspn
+		newAccount->password[strcspn(newAccount->password, "\n")] = '\0';
+
 		// prompt the user to confirm their password
 			// function: printf
 		printf("Confirm your password: ");
 
 		// read in user input
 			// function: fgets
-		fgets(confirmPassword, sizeof(confirmPassword), stdin);
+		fgets(confirmPassword, (MAX_SIZE * sizeof(char)), stdin);
 
 		// check if user pressed ENTER
 			// function: checkIfEnter
 			// if true, return null
 		if (checkIfEnter(confirmPassword))
 			return NULL;
+
+		// remove trailing new line character
+				// function: strcspn
+		confirmPassword[strcspn(confirmPassword, "\n")] = '\0';
 	}
 	// end loop
 
@@ -225,7 +253,7 @@ Account* createNewAccount(char accountType)
 
 	// read in user input
 		// function: fgets
-	fgets(userAgeStr, sizeof(userAgeStr), stdin);
+	fgets(userAgeStr, (6 * sizeof(char)), stdin);
 
 	// check if user pressed ENTER
 		// function: checkIfEnter
@@ -253,7 +281,7 @@ Account* createNewAccount(char accountType)
 
 		// read in user input
 			// function: fgets
-		fgets(userAgeStr, sizeof(userAgeStr), stdin);
+		fgets(userAgeStr, (6 * sizeof(char)), stdin);
 
 		// check if user pressed ENTER
 			// function: checkIfEnter
@@ -273,7 +301,7 @@ Account* createNewAccount(char accountType)
 
 	// read in user input
 		// function: fgets
-	fgets(userCashAmountStr, sizeof(userCashAmountStr), stdin);
+	fgets(userCashAmountStr, (MAX_MONEY_SIZE * sizeof(char)), stdin);
 
 	// check if user pressed ENTER
 		// function: checkIfEnter
@@ -298,7 +326,7 @@ Account* createNewAccount(char accountType)
 
 		// read in user input
 			// function: fgets
-		fgets(userCashAmountStr, sizeof(userCashAmountStr), stdin);
+		fgets(userCashAmountStr, (MAX_MONEY_SIZE * sizeof(char)), stdin);
 
 		// check if user pressed ENTER
 			// function: checkIfEnter
