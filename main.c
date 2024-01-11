@@ -11,6 +11,11 @@ extern Account* headAccount = NULL;
 int main()
 {
 	// declare/intialize variables
+		// user's choice for creating a new account or not as char
+		// the account choice of the user as a char
+		// the current user's account as a struct Account pointer
+		// temp account as struct Account pointer for freeing memory
+		// the current user's username and password as strings
 
 	// loop while user wants to create new accounts
 		// notify user that they must create a new account if this is their first 
@@ -41,6 +46,15 @@ int main()
 		// ask the user if they would like to create a new account
 			// function: printf, getUserChoice
 	// end loop
+
+	// loop while the temp account is not null
+		// have head account put to next field of head
+		// free the temp account
+		// assign temp account to head
+	// end loop
+
+	// notify user the program has ended
+		// function: printf
 
 	// return success
 	return 0;
